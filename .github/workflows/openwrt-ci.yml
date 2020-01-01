@@ -63,11 +63,11 @@ jobs:
           git clone https://github.com/Ameykyl/luci-app-koolproxyR
           git clone https://github.com/rosywrt/luci-theme-rosy
 
-      #- name: 同步最新的源码
-        #run: |
-          #git remote add openwrt https://github.com/coolsnowwolf/lede.git
-          #git pull openwrt master --allow-unrelated-histories
-          #git remote -v
+      # - name: 同步最新的源码
+        # run: |
+          # git remote add openwrt https://github.com/coolsnowwolf/lede.git
+          # git pull openwrt master --allow-unrelated-histories
+          # git remote -v
 
       - name: Update feeds
         run: |
@@ -224,8 +224,7 @@ jobs:
       - name: Compile firmware
         run: |
           echo -e "$(nproc) thread build."
-          make -j$(nproc) V=s
-
+          make -j1 V=s
 
       - name: Assemble artifact
         run: |
